@@ -1,0 +1,26 @@
+{
+  "photos": [
+    {
+      "file": "assets/sonrisa.jpg",
+      "source": "https://www.pexels.com/photo/portrait-of-a-woman-16459028/",
+      "author": "Kawê Rodrigues",
+      "image": "https://images.pexels.com/photos/16459028/pexels-photo-16459028.jpeg?auto=compress&cs=tinysrgb&w=1500",
+      "usage": "Imagen de stock de demostración; no representa al odontólogo, pacientes ni instalaciones reales."
+    },
+    {
+      "file": "assets/consulta.jpg",
+      "source": "https://www.pexels.com/photo/a-dentist-in-a-clinic-working-on-a-patient-6812558/",
+      "author": "Pavel Danilyuk",
+      "image": "https://images.pexels.com/photos/6812558/pexels-photo-6812558.jpeg?auto=compress&cs=tinysrgb&w=1500",
+      "usage": "Imagen de stock de demostración; no representa al odontólogo, pacientes ni instalaciones reales."
+    },
+    {
+      "file": "assets/cuidado.jpg",
+      "source": "https://www.pexels.com/photo/patient-having-an-appointment-with-a-dentist-5355890/",
+      "author": "Tima Miroshnichenko",
+      "image": "https://images.pexels.com/photos/5355890/pexels-photo-5355890.jpeg?auto=compress&cs=tinysrgb&w=1500",
+      "usage": "Imagen de stock de demostración; no representa al odontólogo, pacientes ni instalaciones reales."
+    }
+  ],
+  "license": "https://www.pexels.com/license/"
+}

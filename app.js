@@ -1,0 +1,21 @@
+(() => {
+  'use strict';
+  document.documentElement.classList.add('js');
+  const menu = document.querySelector('#menu-toggle');
+  const nav = document.querySelector('#nav');
+  const closeNav = () => {menu.setAttribute('aria-expanded','false'); nav.classList.remove('open');};
+  menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open);});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeNav));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){closeNav();menu.focus();}});
+  const form=document.querySelector('#booking-form'), interest=document.querySelector('#interest'), preview=document.querySelector('#message-preview');
+  const message=()=>`Hola, te contacto desde la página. Me gustaría solicitar información sobre ${interest.value.toLocaleLowerCase('es')}. Prefiero una cita en ${form.querySelector('input[name="time"]:checked').value}. ¿Qué disponibilidad tienen?`;
+  const update=()=>{preview.textContent=message();};
+  form.addEventListener('change',update);update();
+  document.querySelectorAll('[data-interest]').forEach(a=>a.addEventListener('click',()=>{interest.value=a.dataset.interest;update();}));
+  let opener=null;
+  const openDialog=(dialog,trigger)=>{opener=trigger;dialog.showModal();dialog.querySelector('[data-close]').focus();};
+  document.querySelectorAll('dialog').forEach(d=>{d.querySelector('[data-close]').addEventListener('click',()=>d.close());d.addEventListener('close',()=>opener?.focus({preventScroll:true}));d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}});});
+  form.addEventListener('submit',e=>{e.preventDefault();document.querySelector('#final-message').textContent=message();document.querySelector('#copy-status').textContent='El WhatsApp del odontólogo aún no está configurado. No se ha enviado ningún mensaje ni reservado una cita.';openDialog(document.querySelector('#request-dialog'),e.submitter);});
+  document.querySelector('#copy-message').addEventListener('click',async()=>{const status=document.querySelector('#copy-status');try{await navigator.clipboard.writeText(document.querySelector('#final-message').textContent);status.textContent='Mensaje copiado. La cita sigue sin reservarse; esta es una demostración.';}catch{status.textContent='No se pudo copiar automáticamente. Puedes seleccionar el texto de arriba y copiarlo.';}});
+  document.querySelector('[data-credits]').addEventListener('click',e=>{e.preventDefault();openDialog(document.querySelector('#credits-dialog'),e.currentTarget);});
+})();
