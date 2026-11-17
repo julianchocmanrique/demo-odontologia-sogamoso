@@ -1,5 +1,5 @@
 Demo de odontología personalizada — Sogamoso
-Marca provisional: Esencia. Pendiente nombre, credenciales, WhatsApp, servicios y horarios reales del odontólogo.
+Nombre confirmado por el usuario: Consultorio Odontológico Dr. Jorge Rubén Cárdenas Cárdenas. Pendientes credenciales, WhatsApp, servicios y horarios reales del odontólogo.
 Dirección facilitada por el usuario: Calle 20 #9a-30, barrio Los Alisos, Sogamoso.
 HTML/CSS/JS estáticos. Fotos de stock Pexels con créditos en photo-sources.json, marcadas como demostración. No representan resultados, pacientes, consultorio ni profesional reales.
 Sin testimonios, certificaciones, cifras de experiencia, tarifas ni promesas de resultados inventadas.

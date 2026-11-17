@@ -8,7 +8,7 @@
   nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeNav));
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){closeNav();menu.focus();}});
   const form=document.querySelector('#booking-form'), interest=document.querySelector('#interest'), preview=document.querySelector('#message-preview');
-  const message=()=>`Hola, te contacto desde la página. Me gustaría solicitar información sobre ${interest.value.toLocaleLowerCase('es')}. Prefiero una cita en ${form.querySelector('input[name="time"]:checked').value}. ¿Qué disponibilidad tienen?`;
+  const message=()=>`Hola, te contacto desde la página del Consultorio Odontológico Dr. Jorge Rubén Cárdenas Cárdenas. Me gustaría solicitar información sobre ${interest.value.toLocaleLowerCase('es')}. Prefiero una cita en ${form.querySelector('input[name="time"]:checked').value}. ¿Qué disponibilidad tienen?`;
   const update=()=>{preview.textContent=message();};
   form.addEventListener('change',update);update();
   document.querySelectorAll('[data-interest]').forEach(a=>a.addEventListener('click',()=>{interest.value=a.dataset.interest;update();}));
